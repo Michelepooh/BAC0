@@ -124,7 +124,7 @@ class Lite(
             level="info",
         )
         self.log(f"Using bacpypes3 version {bacpypes_version}", level="info")
-        self.log("Use BAC0.log_level to adjust verbosity of the app.", level="info")
+        self.log("Use BAC0.log_level to adjust verbosity of the app.", level="error") ## MK Changed "info" to "error"
         self.log(
             "Ex. BAC0.log_level('silence') or BAC0.log_level('error')", level="info"
         )
