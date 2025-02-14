@@ -5,14 +5,16 @@ import os
 import logging ## MK
 
 _LOGGER = logging.getLogger(__name__) ## MK
-_LOGGER.error(f"(__init.py__) Beginning only") ## MK
+_LOGGER.error(f"(__init.py__) Beginning only now") ## MK
 
 
 if importlib.util.find_spec("bacpypes3") is not None:
     import bacpypes3  # noqa: F401
+_LOGGER.error(f"(__init.py__) bacpypes3 imported") ## MK
 
 else:
     # Using print here or setup.py will fail
+    _LOGGER.error(f"(__init.py__) bacpypes3 is missing") ## MK
     print("=" * 80)
     print(
         'BACpypes3 module missing, please install latest version using \n    $ "pip install BACpypes3"'
@@ -22,6 +24,9 @@ else:
 
 if importlib.util.find_spec("dotenv") is not None:
     from dotenv import load_dotenv
+
+    _LOGGER.error(f"(__init.py__) dotenv imported") ## MK
+
 
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 else:
