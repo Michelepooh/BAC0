@@ -26,7 +26,6 @@ if importlib.util.find_spec("dotenv") is not None:
 else:
     print("You need to pip install python-dotenv to use your .env file")
 
-_LOGGER.error(f"BAC0.Initialized") ## MK
 
 try:
     from . import core, tasks  # noqa: F401
@@ -43,6 +42,9 @@ try:
 
     # New preferred way to start
     from .scripts.Lite import Lite as start  # noqa: F401
+
+    _LOGGER.error(f"BAC0.Initialized; Lite imported as start") ## MK
+    
     from .tasks.Devices import AddDevice as add_device  # noqa: F401
     from .tasks.Match import Match as match  # noqa: F401
     from .tasks.Poll import SimplePoll as poll  # noqa: F401
