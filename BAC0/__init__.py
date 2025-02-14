@@ -5,6 +5,7 @@ import os
 import logging ## MK
 
 _LOGGER = logging.getLogger(__name__) ## MK
+_LOGGER.error(f"(__init.py__) Beginning only") ## MK
 
 
 if importlib.util.find_spec("bacpypes3") is not None:
