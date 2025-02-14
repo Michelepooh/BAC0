@@ -27,7 +27,7 @@ else:
     print("You need to pip install python-dotenv to use your .env file")
 
 
-    _LOGGER.error(f"BAC0.Initialized; Lite is going to be imported as start") ## MK
+    _LOGGER.error(f"(__init.py__) BAC0.Initialized; Lite is going to be imported as start") ## MK
 
 
 try:
@@ -46,7 +46,7 @@ try:
     # New preferred way to start
     from .scripts.Lite import Lite as start  # noqa: F401
 
-    _LOGGER.error(f"BAC0.Initialized; Lite imported as start") ## MK
+    _LOGGER.error(f"(__init.py__) BAC0.Initialized; Lite imported as start") ## MK
     
     from .tasks.Devices import AddDevice as add_device  # noqa: F401
     from .tasks.Match import Match as match  # noqa: F401
