@@ -10,7 +10,7 @@ _LOGGER.error(f"(__init.py__) Beginning only now") ## MK
 
 if importlib.util.find_spec("bacpypes3") is not None:
     import bacpypes3  # noqa: F401
-_LOGGER.error(f"(__init.py__) bacpypes3 imported") ## MK
+    _LOGGER.error(f"(__init.py__) bacpypes3 imported") ## MK
 
 else:
     # Using print here or setup.py will fail
