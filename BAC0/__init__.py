@@ -27,6 +27,9 @@ else:
     print("You need to pip install python-dotenv to use your .env file")
 
 
+    _LOGGER.error(f"BAC0.Initialized; Lite is going to be imported as start") ## MK
+
+
 try:
     from . import core, tasks  # noqa: F401
     from .core.devices.Device import DeviceLoad as load  # noqa: F401
