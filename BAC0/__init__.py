@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 import importlib.util
 import os
+import logging ## MK
+
+_LOGGER = logging.getLogger(__name__) ## MK
+
 
 if importlib.util.find_spec("bacpypes3") is not None:
     import bacpypes3  # noqa: F401
@@ -21,6 +25,8 @@ if importlib.util.find_spec("dotenv") is not None:
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 else:
     print("You need to pip install python-dotenv to use your .env file")
+
+_LOGGER.error(f"BAC0.Initialized") ## MK
 
 try:
     from . import core, tasks  # noqa: F401
