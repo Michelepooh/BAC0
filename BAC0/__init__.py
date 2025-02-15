@@ -5,7 +5,6 @@ import os
 import logging ## MK
 
 _LOGGER = logging.getLogger(__name__) ## MK
-_LOGGER.error(f"(__init.py__) Beginning only now") ## MK
 
 
 if importlib.util.find_spec("bacpypes3") is not None:
@@ -29,9 +28,6 @@ else:
     print("You need to pip install python-dotenv to use your .env file")
 
 
-_LOGGER.error(f"(__init.py__) Lite is going to be imported as start") ## MK
-
-
 try:
     from . import core, tasks  # noqa: F401
     from .core.devices.Device import DeviceLoad as load  # noqa: F401
@@ -46,18 +42,12 @@ try:
     from .scripts.Lite import Lite as lite  # noqa: F401
 
     # New preferred way to start
-    from .scripts.Lite import Lite as start  # noqa: F401
-
-    _LOGGER.error(f"(__init.py__) BAC0.Initialized; Lite imported as start") ## MK
-    
+    from .scripts.Lite import Lite as start  # noqa: F401    
     from .tasks.Devices import AddDevice as add_device  # noqa: F401
     from .tasks.Match import Match as match  # noqa: F401
     from .tasks.Poll import SimplePoll as poll  # noqa: F401
 
 except ImportError as error:
-    
-    _LOGGER.error(f"(__init.py__) BAC0. Not initialized; Error: {error}") ## MK
-    
     print("=" * 80)
     print(
         'Import Error, refer to documentation or reinstall using \n    $ "pip install BAC0"\n {}'.format(
