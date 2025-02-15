@@ -118,14 +118,7 @@ class Lite(
         db_params: t.Optional[t.Dict[str, t.Any]] = None,
         **params,
     ) -> None:
-        self._initialized = False
-
-        
-        _LOGGER = logging.getLogger(__name__) ## MK
-        _LOGGER.error(f"(BAC0.scripts.lite – init") ## MK
-        
-        
-        
+        self._initialized = False        
         self.log(
             f"Starting Asynchronous BAC0 version {version} ({self.__module__.split('.')[-1]})",
             level="info",
