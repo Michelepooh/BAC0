@@ -55,6 +55,9 @@ try:
     from .tasks.Poll import SimplePoll as poll  # noqa: F401
 
 except ImportError as error:
+    
+    _LOGGER.error(f"(__init.py__) BAC0. Not initialized; Error: {error}") ## MK
+    
     print("=" * 80)
     print(
         'Import Error, refer to documentation or reinstall using \n    $ "pip install BAC0"\n {}'.format(
