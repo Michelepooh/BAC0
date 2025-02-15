@@ -20,7 +20,6 @@ else:
     print("\nDiscard this message if you are actually installing BAC0.")
     print("=" * 80)
 
-_LOGGER.error(f"(__init.py__) before dotenv") ## MK
 
 if importlib.util.find_spec("dotenv") is not None:
     from dotenv import load_dotenv
@@ -30,7 +29,7 @@ else:
     print("You need to pip install python-dotenv to use your .env file")
 
 
-_LOGGER.error(f"(__init.py__) BAC0.Initialized; Lite is going to be imported as start") ## MK
+_LOGGER.error(f"(__init.py__) Lite is going to be imported as start") ## MK
 
 
 try:
